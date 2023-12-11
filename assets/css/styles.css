@@ -1,0 +1,236 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  transition: .3s;
+}
+body{
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr ;
+  grid-template-columns: 2fr 10fr;
+  min-height: 100vh;
+  max-height: 100vh; 
+  grid-template-areas: 
+    "nav nav"
+    "main main"
+    "footer footer";
+}
+nav{
+  background-color: #430d45;
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+nav ul{
+  display: none;
+  list-style: none;
+  text-align: center;
+}
+nav li{
+  margin: 10px;
+}
+nav a{
+  text-decoration: none;
+}
+nav .menu{
+  cursor: pointer;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+}
+.logo i{
+  margin: 0 1em; 
+}
+main{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  "section"
+  "container"
+  "pagination";
+
+  background-color: #952e9d;
+  grid-area: main;
+  overflow-y: scroll;
+}
+section{
+  background-color: #f8ebfc;
+  grid-area: section;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1em;
+}
+section p{
+  color: #430d45;
+  padding: .5em;
+}
+section select{
+  color: #430d45;
+  width: 100%;
+  border: solid 1px #430d45;
+  border-radius: 3px;
+}
+section option{
+  color: #df89e9;
+}
+.container-products{
+  display: grid;
+  grid-area: container;
+  grid-template-columns: 1fr;     
+  padding: 1em;
+  gap: 1em;
+  overflow-y: unset;
+}
+.card-product{
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px 0px rgba(66, 66, 66, 0.75);
+}
+.card-product:hover{
+  box-shadow: 1px 1px 10px 5px rgb(22, 22, 22);
+}
+.card-product p{
+  color: #430d45;
+}
+.card-product img{
+  width: 100%;
+}
+.card-product-image{
+  border-radius: 5px;
+  overflow: hidden;
+}
+.card-product a{
+  margin: .5em 0;
+  background-color: #952e9d;
+  padding: .5em;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.pagination{
+  grid-area: pagination;
+  background-color: #952e9d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination span{
+  cursor: pointer;
+  color: #952e9d;
+  padding: .5em;
+  display: inline-block;
+  width: 100%;
+}
+.pagination span:hover{
+  background-color: #cfcfcf;
+}
+.pagination-content span:nth-child(2) {
+  border-left: solid 1px #952e9d;
+  border-right: solid 1px #952e9d;
+}
+
+.pagination-content span:nth-child(4) {
+  border-left: solid 1px #952e9d;
+  border-right: solid 1px #952e9d;
+}
+.pagination i{
+  color: #952e9d;
+}
+.pagination-content{
+  background-color: #fff;
+  border: solid 1px #952e9d;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+}
+footer{
+  background-color: #df89e9;
+  grid-area: footer;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.rrss{
+  display: flex;
+  justify-content: center;
+}
+.rrss i{
+  margin: .5em .2em;
+}
+footer h4{
+  padding: .5em 0;
+}
+
+@media (min-width: 576px) {
+  body{
+    grid-template-areas: 
+    "nav nav"
+    "main main"
+    "footer footer";
+  }
+  section {
+    justify-content: flex-start;
+}
+  nav{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  nav ul{
+    display: flex;
+  }
+  main{
+    grid-template-rows: 1fr 14fr 1fr ;
+    grid-template-areas:
+    "section container"
+    "section container"
+    "section pagination";
+    overflow-y: scroll;
+  }
+  .container-products{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .menu{
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  body{
+    grid-template-areas: 
+    "nav main"
+    "nav main"
+    "footer main";
+  }
+  .container-products {
+    overflow-y: scroll;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  nav{
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  nav ul{
+    flex-direction: column;
+  }
+  main{
+    grid-template-areas: 
+    "section"
+    "container"
+    "pagination";
+    overflow-y: unset;
+  }
+}
