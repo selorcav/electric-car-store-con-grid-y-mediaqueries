@@ -89,7 +89,7 @@ section option{
   grid-template-columns: 1fr;     
   padding: 1em;
   gap: 1em;
-  overflow-y: unset;
+  overflow-y: scroll;
 }
 .card-product{
   background-color: #fff;
@@ -231,6 +231,6 @@ footer h4{
     "section"
     "container"
     "pagination";
-    overflow-y: unset;
+    overflow-y: auto;
   }
 }
